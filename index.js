@@ -42,7 +42,7 @@ box.map((value, index) => {
 console.log(box)
 
 const fs = require('fs');
-let saveFile = JSON.stringify(box, null, 1);
+let saveFile = JSON.stringify(box, null, 2);
 console.log(saveFile)
 fs.writeFile('./test.json', saveFile, "utf-8", (err) => {
   if(err) throw err;
@@ -65,3 +65,15 @@ class ah extends ItsMe{
 
 let test = new ah(1, '아', '대전', true);
 // console.log(test)
+
+
+
+class na extends ah{
+  constructor(id, name, city, eye, na) {
+    super(id, name, city, eye)
+    this.na = na
+  }
+}
+
+let testTow = new na(1, '아', '대전', true, 'na')
+console.log(testTow)
